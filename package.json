@@ -1,0 +1,21 @@
+{
+	"name": "academia_chatbot_backend",
+	"version": "0.1.0",
+	"description": "Academia Chatbot Backend",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"serve": "aqueduct serve"
+	},
+	"keywords": [
+		"academia",
+		"chatbot",
+		"dart",
+		"froghramar"
+	],
+	"author": {
+		"name": "Feroz Ahmmed",
+		"email": "froghramar@gmail.com"
+	}
+}
