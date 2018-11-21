@@ -13,11 +13,18 @@ class AcademiaChatBotBackendChannel extends ApplicationChannel {
 		final router = Router();
 
 		router
-			.route("/example")
-			.linkFunction((request) async {
-				return Response.ok({"key": "value"});
-			});
+			.route("/admin/*")
+			.link(() => AdminController());
 
 		return router;
 	}
+}
+
+class AdminController extends Controller {
+
+	@override
+	Future<RequestOrResponse> handle(Request request) async {
+		return Response.ok({"path": request.path.remainingPath});
+	}
+
 }
