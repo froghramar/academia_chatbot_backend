@@ -24,7 +24,27 @@ class AdminController extends Controller {
 
 	@override
 	Future<RequestOrResponse> handle(Request request) async {
-		return Response.ok({"path": request.path.remainingPath});
+		if (request.method != 'POST') {
+			return Response.notFound();
+		}
+		switch (request.path.remainingPath) {
+			case 'list':
+				return await getAdminList(request);
+				break;
+			default:
+				return Response.notFound();
+				break;
+		}
+	}
+
+	Future<Response> getAdminList(Request request) async {
+		return Response.ok([
+			{'id': 11, 'name': 'Mr. Nice'},
+			{'id': 12, 'name': 'Narco'},
+			{'id': 13, 'name': 'Bombasto'},
+			{'id': 14, 'name': 'Celeritas'},
+			{'id': 15, 'name': 'Magneta'},
+		]);
 	}
 
 }
