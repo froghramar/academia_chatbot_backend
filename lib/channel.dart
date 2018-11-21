@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:aqueduct/aqueduct.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 class AcademiaChatBotBackendChannel extends ApplicationChannel {
 
@@ -38,13 +39,14 @@ class AdminController extends Controller {
 	}
 
 	Future<Response> getAdminList(Request request) async {
-		return Response.ok([
-			{'id': 11, 'name': 'Mr. Nice'},
-			{'id': 12, 'name': 'Narco'},
-			{'id': 13, 'name': 'Bombasto'},
-			{'id': 14, 'name': 'Celeritas'},
-			{'id': 15, 'name': 'Magneta'},
-		]);
+
+		final Db database = Db('mongodb://localhost:27017/schooldb');
+		await database.open();
+
+		final collection = database.collection('Admins');
+		final admins = await collection.find().toList();
+
+		return Response.ok(admins);
 	}
 
 }
