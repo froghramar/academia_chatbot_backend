@@ -1,5 +1,6 @@
 import 'package:aqueduct/aqueduct.dart';
-import '../../database.dart';
+import 'get-admin-list.dart';
+import 'get-admin.dart';
 
 class AdminController extends Controller {
 
@@ -9,21 +10,16 @@ class AdminController extends Controller {
 			return Response.notFound();
 		}
 		switch (request.path.remainingPath) {
-			case 'list':
-				return await _getAdminList(request);
+			case 'get-list':
+				return await getAdminList(request);
+				break;
+			case 'get-one':
+				return getAdmin(request);
 				break;
 			default:
 				return Response.notFound();
 				break;
 		}
-	}
-
-	Future<Response> _getAdminList(Request request) async {
-
-		final collection = await Database.collection('Admins');
-		final admins = await collection.find().toList();
-
-		return Response.ok(admins);
 	}
 
 }
