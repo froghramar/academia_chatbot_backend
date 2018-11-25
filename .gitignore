@@ -12,9 +12,10 @@ packages
 *.js_
 *.js.deps
 *.js.map
-workspace.xml
-Dart_Packages.xml
 .DS_Store
 *.aqueduct.pid
 package-lock.json
 pubspec.lock
+
+# Private Files
+config.yaml
