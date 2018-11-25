@@ -10,5 +10,8 @@ class ApplicationConfiguration extends Configuration {
 
 	static ApplicationConfiguration getInstance() => _applicationConfiguration ??= ApplicationConfiguration('config.yaml');
 
+	bool production;
 	Map<String, String> database;
+	Map<String, int> passwordHash;
+	String defaultAdminPassword;
 }

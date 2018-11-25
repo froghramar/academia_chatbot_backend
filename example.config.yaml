@@ -1,2 +1,8 @@
+production: true
 database:
-  connectionString: mongodb://localhost:27017/schooldb
+  connectionString: <your-db>
+passwordHash:
+  saltLength: 25
+  rounds: 15
+  keyLength: 100
+passwordForhash: password
