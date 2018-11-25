@@ -5,7 +5,7 @@ class Database {
 
 	static Future<DbCollection> collection(String collectionName) {
 
-		final config = ApplicationConfiguration('config.yaml');
+		final config = ApplicationConfiguration.getInstance();
 
 		final Db database = Db(config.database["connectionString"]);
 		return database.open().then((d) {
