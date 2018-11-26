@@ -3,6 +3,7 @@ import 'package:aqueduct/aqueduct.dart';
 
 import 'controllers/admin/admin_controller.dart';
 import 'controllers/security/security_controller.dart';
+import 'middlewares/authorization_controller.dart';
 
 class AcademiaChatBotBackendChannel extends ApplicationChannel {
 
@@ -17,6 +18,7 @@ class AcademiaChatBotBackendChannel extends ApplicationChannel {
 
 		router
 			.route("/admin/*")
+			.link(() => AuthorizationController())
 			.link(() => AdminController());
 
 		router
