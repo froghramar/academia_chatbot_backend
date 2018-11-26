@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:aqueduct/aqueduct.dart';
+
 import 'controllers/admin/admin_controller.dart';
+import 'controllers/security/security_controller.dart';
 
 class AcademiaChatBotBackendChannel extends ApplicationChannel {
 
@@ -16,6 +18,10 @@ class AcademiaChatBotBackendChannel extends ApplicationChannel {
 		router
 			.route("/admin/*")
 			.link(() => AdminController());
+
+		router
+			.route("/security/*")
+			.link(() => SecurityController());
 
 		return router;
 	}

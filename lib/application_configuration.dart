@@ -6,9 +6,9 @@ class ApplicationConfiguration extends Configuration {
 	ApplicationConfiguration(String fileName) :
 			super.fromFile(File(fileName));
 
-	static ApplicationConfiguration _applicationConfiguration;
+	static final ApplicationConfiguration _applicationConfiguration = ApplicationConfiguration('config.yaml');
 
-	static ApplicationConfiguration getInstance() => _applicationConfiguration ??= ApplicationConfiguration('config.yaml');
+	static ApplicationConfiguration getInstance() => _applicationConfiguration;
 
 	bool production;
 	Map<String, String> database;
