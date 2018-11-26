@@ -13,4 +13,5 @@ class ApplicationConfiguration extends Configuration {
 	bool production;
 	Map<String, String> database;
 	String defaultAdminPassword;
+	Map<String, String> jwt;
 }

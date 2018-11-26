@@ -2,3 +2,6 @@ production: true
 database:
   connectionString: <your-db>
 defaultAdminPassword: password
+jwt:
+  issuer: issuer
+  secret: secret
