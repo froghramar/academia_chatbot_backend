@@ -12,6 +12,5 @@ class ApplicationConfiguration extends Configuration {
 
 	bool production;
 	Map<String, String> database;
-	Map<String, int> passwordHash;
 	String defaultAdminPassword;
 }

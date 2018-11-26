@@ -1,8 +1,4 @@
 production: true
 database:
   connectionString: <your-db>
-passwordHash:
-  saltLength: 25
-  rounds: 15
-  keyLength: 100
-passwordForhash: password
+defaultAdminPassword: password
