@@ -1,9 +1,9 @@
 import 'package:aqueduct/aqueduct.dart';
 
 import '../../application_configuration.dart';
-import 'create-seed-data.dart';
-import 'get-admin-list.dart';
-import 'get-admin.dart';
+import 'create_seed_data.dart';
+import 'get_admin.dart';
+import 'get_admin_list.dart';
 
 class AdminController extends Controller {
 
